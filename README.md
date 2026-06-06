@@ -6,10 +6,10 @@ A 2D top-down space shooter being developed with Godot.
 
 - Player movement
 - Multi-layer parallax background
+- Shooting mechanics
 
 ## Planned Features
 
-- Shooting mechanics
 - Enemies
 - Score system
 - Sound effects
