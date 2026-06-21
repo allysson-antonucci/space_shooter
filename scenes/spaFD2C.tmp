@@ -1,6 +1,5 @@
-[gd_scene load_steps=61 format=3 uid="uid://b51kt78m84tot"]
+[gd_scene load_steps=60 format=3 uid="uid://b51kt78m84tot"]
 
-[ext_resource type="Script" path="res://scripts/space.gd" id="1_a3gx6"]
 [ext_resource type="Texture2D" uid="uid://bgvw3v5imxw40" path="res://assets/space/Starry background  - Layer 01 - Solid colour.png" id="1_vx6ts"]
 [ext_resource type="Texture2D" uid="uid://ctsgqr4u2c0iq" path="res://assets/space/Starry background - Layer X -Rotary Star.png" id="2_glmff"]
 [ext_resource type="PackedScene" uid="uid://u0opngu7v4e7" path="res://scenes/player.tscn" id="2_xrxaq"]
@@ -9,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bxwky38ut3txt" path="res://assets/space/Starry background - Layer X -Black hole.png" id="5_y20l2"]
 [ext_resource type="Texture2D" uid="uid://bw1s7j0ai65pw" path="res://assets/space/Starry background  - Layer 03 - Stars.png" id="6_4kylk"]
 [ext_resource type="Texture2D" uid="uid://dv3fadkeabxng" path="res://assets/space/Starry background - Layer X - Big Star 2.png" id="7_12s2k"]
-[ext_resource type="PackedScene" uid="uid://0bb1bbbegaxl" path="res://scenes/enemy_1.tscn" id="9_aphd7"]
+[ext_resource type="PackedScene" uid="uid://0bb1bbbegaxl" path="res://scenes/enemy.tscn" id="9_aphd7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y7q16"]
 atlas = ExtResource("3_fklml")
@@ -367,8 +366,6 @@ animations = [{
 }]
 
 [node name="Space" type="Node2D"]
-script = ExtResource("1_a3gx6")
-enemy_1_scene = ExtResource("9_aphd7")
 
 [node name="ParallaxBackground" type="Node2D" parent="."]
 
@@ -433,8 +430,5 @@ autoplay = "big_star_2"
 [node name="Player" parent="." instance=ExtResource("2_xrxaq")]
 position = Vector2(320, 180)
 
-[node name="Next_Wave_Timer" type="Timer" parent="."]
-wait_time = 2.0
-autostart = true
-
-[connection signal="timeout" from="Next_Wave_Timer" to="." method="_on_next_wave_timer_timeout"]
+[node name="Enemy" parent="." instance=ExtResource("9_aphd7")]
+position = Vector2(-237, -19)

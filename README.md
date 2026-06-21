@@ -7,13 +7,13 @@ A 2D top-down space shooter being developed with Godot.
 - Player movement
 - Multi-layer parallax background
 - Shooting mechanics
+- Enemies
 
 ## Planned Features
 
-- Enemies
-- Score system
-- Sound effects
-- UI
+- Enemy wave system
+- Boss battles
+- User Interface (UI)
 
 ## Technologies
 

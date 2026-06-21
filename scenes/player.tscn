@@ -1,17 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://u0opngu7v4e7"]
+[gd_scene load_steps=7 format=3 uid="uid://u0opngu7v4e7"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_tf14b"]
 [ext_resource type="Texture2D" uid="uid://b1if5bbucq76y" path="res://assets/ships/playerShip1_red.png" id="2_ccpoj"]
+[ext_resource type="Resource" uid="uid://7tvbn8180jui" path="res://resources/ships/ship_1.tres" id="2_vxctj"]
 [ext_resource type="PackedScene" uid="uid://bk2th46nh3rcu" path="res://scenes/bullet.tscn" id="3_kd2je"]
+[ext_resource type="AudioStream" uid="uid://bmeqkrxwp4uam" path="res://assets/sfx/laser_sfx.mp3" id="5_xysm8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_083o1"]
-size = Vector2(80, 20)
+[sub_resource type="CircleShape2D" id="CircleShape2D_5xlgn"]
+radius = 40.0
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_tf14b")
-max_speed = 300
-acceleration = 1200
-deceleration = 100
+ship_data = ExtResource("2_vxctj")
 bullet_scene = ExtResource("3_kd2je")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -20,10 +21,14 @@ texture = ExtResource("2_ccpoj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 10)
-shape = SubResource("RectangleShape2D_083o1")
+rotation = 1.5708
+shape = SubResource("CircleShape2D_5xlgn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
 
 [node name="Shoot_Marker2D" type="Marker2D" parent="."]
-position = Vector2(0, -45)
+position = Vector2(0, -40)
+
+[node name="Shoot_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_xysm8")

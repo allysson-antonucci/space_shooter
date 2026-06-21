@@ -1,0 +1,112 @@
+[gd_resource type="Resource" script_class="ShipsData" load_steps=25 format=3 uid="uid://7tvbn8180jui"]
+
+[ext_resource type="Texture2D" uid="uid://b0lgv8wf1tqfc" path="res://assets/lasers/laserBlue01.png" id="1_8nb5u"]
+[ext_resource type="Texture2D" uid="uid://bklj5qgw1q787" path="res://assets/lasers/laserGreen11.png" id="2_2htp3"]
+[ext_resource type="Texture2D" uid="uid://cwbno6pvsk85i" path="res://assets/lasers/laserRed01.png" id="3_ed3he"]
+[ext_resource type="Script" path="res://scripts/data/ships_data.gd" id="4_pl3sa"]
+[ext_resource type="Texture2D" uid="uid://g8tb0ypj3ry" path="res://assets/ships/playerShip1_blue.png" id="5_6garh"]
+[ext_resource type="Texture2D" uid="uid://caq8wjvefpd7i" path="res://assets/ships/playerShip1_green.png" id="6_ivrwd"]
+[ext_resource type="Texture2D" uid="uid://bxhdk0v70nvh0" path="res://assets/ships/playerShip1_orange.png" id="7_geiwn"]
+[ext_resource type="Texture2D" uid="uid://dqjvrx8llu0w6" path="res://assets/effects/Explosion_effects.png" id="8_yl2e7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_te74f"]
+atlas = ExtResource("1_8nb5u")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfmxa"]
+atlas = ExtResource("2_2htp3")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_caias"]
+atlas = ExtResource("3_ed3he")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndubp"]
+atlas = ExtResource("5_6garh")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_py11h"]
+atlas = ExtResource("6_ivrwd")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rhtj"]
+atlas = ExtResource("7_geiwn")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5flv"]
+atlas = ExtResource("8_yl2e7")
+region = Rect2(0, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4iqa3"]
+atlas = ExtResource("8_yl2e7")
+region = Rect2(64, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgmda"]
+atlas = ExtResource("8_yl2e7")
+region = Rect2(128, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6l3ac"]
+atlas = ExtResource("8_yl2e7")
+region = Rect2(192, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skay2"]
+atlas = ExtResource("8_yl2e7")
+region = Rect2(256, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evxl5"]
+atlas = ExtResource("8_yl2e7")
+region = Rect2(320, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlpcj"]
+atlas = ExtResource("8_yl2e7")
+region = Rect2(384, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cthxd"]
+atlas = ExtResource("8_yl2e7")
+region = Rect2(448, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmi84"]
+atlas = ExtResource("8_yl2e7")
+region = Rect2(512, 384, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6eco3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5flv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4iqa3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgmda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6l3ac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skay2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evxl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlpcj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cthxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmi84")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("4_pl3sa")
+ship = Array[AtlasTexture]([SubResource("AtlasTexture_ndubp"), SubResource("AtlasTexture_py11h"), SubResource("AtlasTexture_2rhtj")])
+laser = Array[AtlasTexture]([SubResource("AtlasTexture_te74f"), SubResource("AtlasTexture_mfmxa"), SubResource("AtlasTexture_caias")])
+ship_explosion = SubResource("SpriteFrames_6eco3")
+shoot_damage = 20.0
+shoot_speed = 600.0
+shoot_cooldown = 2.0
+health = 160.0
+max_speed = 400.0
+acceleration = 250.0
+deceleration = 480.0
